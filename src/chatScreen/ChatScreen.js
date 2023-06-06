@@ -22,29 +22,11 @@ function ChatScreen({
 
   let chatId;
   let contactPic;
-  //const chatId = currentChats[userKey].id;
-  //const contactPic = currentChats[userKey].user.profilePic;
-
-  console.log("number of chats:" + numOfChats)
   if (numOfChats !== 0) {
     chatId = currentChats[userKey].id;
     contactPic = currentChats[userKey].user.profilePic;
   }
 
-  // let chatId;
-  // let contactPic;
-  // if (numOfChats < userKey) {
-  //   if (numOfChats === 0) {
-  //     chatId = 0;
-  //     contactPic = null;
-  //   } else {
-  //     chatId = currentChats[0].id;
-  //     contactPic = currentChats[0].user.profilePic;
-  //   }
-  // } else {
-  //   chatId = 2;
-  //   contactPic = "";
-  // }
   async function addMsg(msg) {
     const data = { "msg": msg }
     const addMsgRes = await fetch("http://localhost:5000/api/Chats/" + chatId + "/Messages", {
@@ -86,36 +68,6 @@ function ChatScreen({
         }
       }
     }
-
-    // const currMsg = {
-    //   className: "liRight",
-    //   profile: user.picture,
-    //   value: msg,
-    //   timeAndDate: currentTimeAndDateString(),
-    // };
-    // setUserMessages((prevMessages) => {
-    //   setCurrentChats((prevChats) => {
-    //     const newChats = [...prevChats];
-    //     let tempMsg;
-    //     if (msg.length > 15) {
-    //       tempMsg = msg.slice(0, 15);
-    //       tempMsg = tempMsg + "..";
-    //     } else {
-    //       tempMsg = msg;
-    //     }
-    //     newChats[userKey] = {
-    //       name: prevChats[userKey]?.name,
-    //       profile: prevChats[userKey]?.profile,
-    //       lastMsg: tempMsg,
-    //       timeAndDate: currentTimeAndDateString(),
-    //       isActive: prevChats[userKey]?.isActive,
-    //     };
-    //     return newChats;
-    //   });
-    //   const newMessages = [...prevMessages]; // Create a copy of the array
-    //   newMessages[userKey] = [...prevMessages[userKey], currMsg]; // Modify the copy
-    //   return newMessages; // Return the modified copy
-    // });
   };
 
   return (
