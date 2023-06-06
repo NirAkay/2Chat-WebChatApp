@@ -9,9 +9,7 @@ function MessageInput({ addMsg, numberOfChats, isClicked }) {
   const inputVal = useRef(null);
 
   const makeSubmit = function () {
-    console.log(true);
     if (inputVal.current.value !== "" && isClicked) {
-      console.log("In Msg");
       addMsg(inputVal.current.value);
       inputVal.current.value = "";
     }

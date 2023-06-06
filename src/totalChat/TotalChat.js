@@ -30,54 +30,37 @@ const TotalChat = ({
 
   mySocket.off('newMsg');
   mySocket.on('newMsg', function (response) {
-    console.log(currentChats[currChat].id);
-    console.log("A new message!");
-    if (currentChats[currChat].id === response.chat.id && isClicked) {
-      console.log("1");
-      console.log(UserMessages);
+    if (isClicked && currentChats[currChat].id === response.chat.id) {
       setUserMessages((prevMsgs) => {
         let tempMsgs = [...prevMsgs];
         tempMsgs.unshift(response.msg);
         return tempMsgs;
       });
-      console.log("2");
-      console.log(UserMessages);
     }
-    console.log("3");
     let tempChats = [...currentChats];
-    console.log("4");
     let flag = false;
-    console.log("5");
     let updatedChats = tempChats.map((chat) => {
-      console.log("6");
       if (chat.id === response.chat.id) {
-        console.log("7");
         chat.lastMessage = { id: response.msg.id, created: response.msg.created, content: response.msg.content };
-        console.log("8");
         flag = true;
       }
       return chat;
     })
     if (flag) {
-      console.log("9");
       setCurrentChats(updatedChats);
-      console.log("10");
     } else {
-      console.log("11");
-      console.log(currentChats);
       setCurrentChats((prevChats) => [...prevChats, response.chat]);
-      console.log("12");
-      console.log(currentChats);
+      setNumOfChats((prevNumOfChats) => (prevNumOfChats + 1));
     }
   });
 
   mySocket.off('updateChat');
   mySocket.on('updateChat', function (response) {
-    console.log("in updateChat");
-    if (currentChats[currChat].id === response.chatId && isClicked) {
+    if (isClicked && currentChats[currChat].id === response.chatId) {
       setUserMessages(response.messages);
     }
     setCurrentChats(response.chats);
+    setNumOfChats((prevNumOfChats) => (prevNumOfChats + 1));
   })
 
 
