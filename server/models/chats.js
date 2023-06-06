@@ -129,8 +129,8 @@ async function createChat(bearer, token, recieverData) {
         if (res.acknowledged === true) {
             return {
                 id: res.insertedId, user: {
-                    username: recieverData.username, displayName: recRes.displayName,
-                    profilePic: recRes.profilePic
+                    username: recieverData.username, displayName: recRes[0].displayName,
+                    profilePic: recRes[0].profilePic
                 }
             }
         } else {
