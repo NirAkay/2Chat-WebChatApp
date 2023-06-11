@@ -170,7 +170,8 @@ in the `chat` the client will add conatcts and if they are exist in the database
 
 ### Server - 
 the server will run endlesslesy and respone to requests of the users that connects to him. the server is responsible to send messages to the contacts in the other side of the chat.<br /> 
-![chat1](https://github.com/NirAkay/TM2part3/assets/117992376/08c7d500-6c2f-4997-b5d7-ad75e5743375)
+
+### Images for ilustration of chat -
 
 ![chat1](https://github.com/NirAkay/TM2part3/assets/117992376/068151da-a65a-4728-963c-5085967a3fdf)
 ![chat2](https://github.com/NirAkay/TM2part3/assets/117992376/6ca80ccd-6c4c-4dac-bfed-4fd7d4da45d1)
