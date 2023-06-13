@@ -153,23 +153,30 @@ switch located up in register or login pages and left down in chat page.
 
 ## Ex2
 
-### Descreption -
+### Description 
 in this part we take our project from the last part and make him to work with server. also we use Mongodb database that will work with the server and help us the save data about our users.<br />
 
-### Register -
+### Register 
 
-in the `register` the client only validate if the field are right (see the previous part to know what is our valdittions). and in the server we check if the username is already exist in our database. if all the fields are valids and the `username` doesn't exist in the database the web will transfer to the `login` page.<br />
+on the `register` page the client side only validate if the field are right (see the previous part for more info about our valdittions). and in the server we check whether the username is already exist in our database or not. if all the fields indeed valid and the `username` doesn't exist in our database the web will move to the `login` page.<br />
 
-### Login -
+### Login 
 
-in the `login` the client will insert his `username` and `password` and this field will transfer to the server. if this fields exist in the database the server the web will transfer to the `Chat` page, otherwise a message `Username or Password are incorrect. please try again.` will apear in the page.<br />
+on the `login` page the client will insert his `username` and `password` and this fields will transfer to the server. if this fields exist in the database the server the web will move to the `Chat` page, otherwise a message `Username or Password are incorrect. please try again.` will appear on the page.<br />
 
-### Chat -
+### Chat 
 
-in the `chat` the client will add conatcts and if they are exist in the database the contact will add to the list of contacts. when the user sent a message to this contact the message he sent will transfer to the database and then will transfer to this contact. our user will recive the messages in the moment his contact sent to him.<br />
+on the `chat` page the client will add conatcts and if they are exist in the database the contact will add to the list of contacts. when the user sent a message to this contact the message he sent will transfer to the database and then will transfer to this contact. our user will recive the messages in the moment his contact sent it to him - live updating.<br />
 
-### Server - 
-the server will run endlesslesy and respone to requests of the users that connects to him. the server is responsible to send messages to the contacts in the other side of the chat.<br /> 
+### Server
+the server will run endlesslesy and will respone to requests from users that connects to it. the server is responsible to send messages to the contacts from the other side of the chat.<br /> 
+
+### New feataures
+this time we added the client-server functionality, a live add contact, send new message updating and even multiple tabs open on the chat screen of the same user will update any changes one of them makes!
+
+### Notice
+our server is not suport an uploading of big profile pictures, so to make it convenience to use please make sure you are upload small ones and keep it simple.
+have fun using our app!
 
 ### Images for ilustration of chat -
 
